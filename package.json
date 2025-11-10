@@ -1,0 +1,12 @@
+{
+  "name": "a-casa-sempre-ganha",
+  "version": "1.0.0",
+  "description": "Contents of the src file of a Web Roullette game in React.\r A project made by Udesc students for OINE: a Roullette that also shows a graphic, which keeps track of all the earnings and losses of the user",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
