@@ -1,149 +1,303 @@
- 
-  .main-content {
-    width: 65%; /* Lado esquerdo, com a roleta e as apostas */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza os itens na coluna */
-    justify-content: center; /* Alinha verticalmente os itens */
-  } 
-  
-  .betting-panel-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribui o espaço entre as colunas */
-    padding: 20px;
-  }
-
-  .roulette-container {
-    background-color: #E5F4F9; 
-    display: flex;
-    flex-direction: row; 
-    justify-content: space-between; /* Distribui o espaço entre as colunas */
-    padding: 20px;
-  }
-  
-  .chart-container {
-    background-color: white; 
-    width: 33%; /* Lado direito, com o gráfico */
-    height: 100%; 
-  
-  }
-  
-  .wheel {
-    width: 300px;
-    height: 300px;
-    border: 5px solid black;
-    border-radius: 50%;
-    position: relative;
-    overflow: hidden;
-    transform-origin: center;
-  }
-  
-  .wheel-segment {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    clip-path: polygon(50% 50%, 100% 45%, 100% 55%);
-    transform-origin: 50% 50%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .wheel-number {
-    position: absolute;
-    transform: rotate(-90deg); /* Rotacionando o número para que fique corretamente dentro do segmento */
-    transform-origin: center;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    left: 50%; /* Posiciona o número no eixo X */
-    top: 10%;  /* Ajuste de posição para deslocar o número para a borda do círculo */
-    
-  }
-  
-  .wheel.spinning {
-    animation: spin-realistic 3s cubic-bezier(0.33, 1, 0.68, 1) forwards;
-  }
-  
-  @keyframes spin-realistic {
-  0% {
-    transform: rotate(0deg);
-  }
-  70% {
-    transform: rotate(3400deg); /* 9 voltas e desacelera */
-  }
-  100% {
-    transform: rotate(3600deg); /* Para em 10 voltas */
-  }
+/* --- ESTRUTURA GERAL --- */
+body {
+    background-color: #800020; 
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    color: #333;
+    margin: 0;
 }
 
-  .indicator {
-    align-items: center;
-    top: 5px;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 20px solid black;
-    z-index: 10;
-  }
-  
-  button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    width: 220px; /* Ajuste do botão para uma largura fixa */
-    max-width: 100%; /* Garante que o botão não ultrapasse a largura da coluna */
-  }
-  
-  .result {
-    margin-top: 15px;
-    font-size: 18px;
-  }
-  
+.header-text {
+    text-align: center;
+    color: #fff;
+    padding: 15px;
+    background-color: rgba(0,0,0,0.2);
+    border-bottom: 4px solid #d90429;
+}
 
-.betting-panel {
-    margin-top: 20px;
+.header-text h1 {
+    margin: 0;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffb2d0;
+}
+
+.roulette-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    padding: 40px;
+    min-height: 80vh;
+    flex-wrap: wrap;
+}
+
+/* --- PAINÉIS --- */
+.panel {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     display: flex;
     flex-direction: column;
-  }
-  
-  input {
-    margin: 5px;
-    padding: 5px;
-    width: 200px;
-  }
-  
-  button {
-    margin-top: 10px;
-    padding: 10px 20px;
-  }
-  
-  .balance-info {
-    margin-top: 15px;
-    font-size: 20px;
-  }
+    border: 2px solid #d90429;
+}
 
-  .betting-panel select {
-    margin: 5px;
-    padding: 5px;
-    width: 213px;
-  }
+/* --- PAINEL DE APOSTAS --- */
+.betting-panel {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+}
 
-  .header-text {
-    margin: 0;
-    background-color: #E5F4F9; 
+.betting-panel h2 {
+    color: #d90429; 
+    border-bottom: 2px solid #ffd700; 
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.control-group {
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    height: 100px; /* Certifique-se de ter uma altura para ver o alinhamento vertical */
-  }
-  
-  .footer {
-    color: #333;
-    font-size: 11px;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+select, input {
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: all 0.3s;
+}
+
+/* Botão GIRAR */
+.spin-btn {
+    background-color: #d90429; 
+    color: #ffd700; 
+    font-size: 18px;
+    font-weight: 800;
+    padding: 16px;
+    border: 2px solid #ffd700;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    box-shadow: 0 4px 0 #8a001a;
+    transition: transform 0.1s;
+}
+
+.spin-btn:hover {
+    background-color: #ff1a40;
+}
+
+.spin-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #8a001a;
+}
+
+.spin-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    border: none;
+}
+
+.sim-btn {
+    background-color: #333;
+    color: #ffd700;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* --- ROLETA --- */
+.wheel-panel {
+    flex: 1.5;
+    min-width: 320px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+/* Container Principal (Fixo 360x360) */
+.wheel-wrapper {
+    position: relative;
+    width: 360px; /* Deve bater com o JS */
+    height: 360px; /* Deve bater com o JS */
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background-color: #b7001a; /* Fundo Vermelho Escuro da borda */
+    box-shadow: 
+        0 0 0 4px #8a001a,
+        0 15px 30px rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container dos LEDs (sobrepõe exatamente o wrapper) */
+.led-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    pointer-events: none; /* Permite clicar na roleta abaixo */
+    z-index: 5;
+}
+
+/* O LED Individual (estilo "bolinha brilhante") */
+.led {
+    position: absolute;
+    width: 12px; /* Deve bater com o JS */
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ffd700;
+    box-shadow: 0 0 5px #ffd700, 0 0 10px #ffea00;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    from { opacity: 0.5; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1.2); box-shadow: 0 0 15px #ffd700; }
+}
+
+.indicator {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0; 
+    height: 0; 
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 40px solid #ffd700; 
+    z-index: 20;
+    filter: drop-shadow(0 4px 2px rgba(0,0,0,0.5));
+}
+
+.wheel {
+    width: 310px; /* Menor para deixar espaço para os LEDs na borda vermelha */
+    height: 310px;
+    border-radius: 50%;
+    border: 4px solid #ffd700; /* Borda dourada interna */
+    transition: transform 3s cubic-bezier(0.1, 0.7, 0.1, 1);
+    
+    /* Gradiente igual à foto */
+    background: conic-gradient(
+        #0066cc 0deg 9.7deg,      
+        #cc0066 9.7deg 19.4deg,   
+        #ffcc00 19.4deg 29.1deg,  
+        #cc0066 29.1deg 38.8deg,
+        #ffcc00 38.8deg 48.5deg,
+        #0066cc 48.5deg 58.2deg,
+        #cc0066 58.2deg 67.9deg,
+        #ffcc00 67.9deg 77.6deg,
+        #0066cc 77.6deg 87.3deg,
+        #cc0066 87.3deg 97deg,
+        #ffcc00 97deg 106.7deg,
+        #0066cc 106.7deg 116.4deg,
+        #cc0066 116.4deg 126.1deg,
+        #ffcc00 126.1deg 135.8deg,
+        #0066cc 135.8deg 145.5deg,
+        #cc0066 145.5deg 155.2deg,
+        #ffcc00 155.2deg 164.9deg,
+        #0066cc 164.9deg 174.6deg,
+        #cc0066 174.6deg 184.3deg,
+        #ffcc00 184.3deg 194deg,
+        #0066cc 194deg 203.7deg,
+        #cc0066 203.7deg 213.4deg,
+        #ffcc00 213.4deg 223.1deg,
+        #0066cc 223.1deg 232.8deg,
+        #cc0066 232.8deg 242.5deg,
+        #ffcc00 242.5deg 252.2deg,
+        #0066cc 252.2deg 261.9deg,
+        #cc0066 261.9deg 271.6deg,
+        #ffcc00 271.6deg 281.3deg,
+        #0066cc 281.3deg 291deg,
+        #cc0066 291deg 300.7deg,
+        #ffcc00 300.7deg 310.4deg,
+        #0066cc 310.4deg 320.1deg,
+        #cc0066 320.1deg 329.8deg,
+        #ffcc00 329.8deg 339.5deg,
+        #0066cc 339.5deg 349.2deg,
+        #cc0066 349.2deg 360deg
+    );
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Centro da roleta */
+.wheel::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #d90429;
+    border: 4px solid #b00020;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+.wheel.spinning {
+    transform: rotate(1800deg);
+}
+
+/* Placar */
+.result-display {
+    background-color: #fff;
+    color: #d90429;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 20px;
+    border: 2px solid #d90429;
+    box-shadow: 0 5px 0 #d90429;
+}
+
+/* --- GRÁFICO --- */
+.chart-panel {
+    flex: 1;
+    min-width: 280px;
+}
+
+.chart-panel h3 {
+    color: #d90429;
+    border-bottom: 2px solid #ffd700;
+}
+
+.simple-graph-container {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #d90429;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.footer {
     text-align: center;
-    vertical-align: bottom
-  }
+    padding: 20px;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.8rem;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}

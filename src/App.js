@@ -1,14 +1,22 @@
 import React from 'react';
+import './App.css'; // Mantenha este import para estilos gerais (pode estar vazio ou não)
 import RouletteWheel from './RouletteWheel';
 
 function App() {
   return (
     <div className="App">
-      <h1 className="header-text"> A Casa Sempre Ganha</h1>
-      <RouletteWheel />
-      <div className="footer">
-        <h3> Made by UDESC students: Carlos Ritzmann, Kauan Werlich and Paulo Gonçalves</h3>
-      </div>
+      <header className="header-text">
+        <h1>Projeto: A Casa Sempre Ganha</h1>
+      </header>
+      
+      <main>
+        <RouletteWheel />
+      </main>
+
+      <footer className="footer">
+        <p>Desenvolvido por: Luciana Rodrigues, Yasmin Friedemann e Tainá Friedemann</p>
+        <p>Universidade Senac</p>
+      </footer>
     </div>
   );
 }
