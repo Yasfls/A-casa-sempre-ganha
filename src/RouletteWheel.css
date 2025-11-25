@@ -74,224 +74,41 @@ select, input {
 
 /* Botão GIRAR */
 .spin-btn {
- align-items: center;
-  appearance: none;
-  background-clip: padding-box;
-  background-color: initial;
-  background-image: none;
-  border-style: none;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  flex-direction: row;
-  flex-shrink: 0;
-  font-family: Eina01,sans-serif;
-  font-size: 16px;
-  font-weight: 800;
-  justify-content: center;
-  line-height: 24px;
-  margin: 0;
-  min-height: 64px;
-  outline: none;
-  overflow: visible;
-  padding: 19px 26px;
-  pointer-events: auto;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-transform: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
-  width: auto;
-  word-break: keep-all;
-  z-index: 0;
+    background-color: #ee3c36;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 19px 26px;
+    border-radius: 80px;
+    border: none;
+    margin-top: 15px;
+    transition: all 0.2s;
+    text-transform: uppercase;
 }
 
-@media (min-width: 768px) {
-  .spin-btn {
-    padding: 19px 32px;
-  }
-}
-
-.spin-btn:before,
-.spin-btn:after {
-  border-radius: 80px;
-}
-
-.spin-btn:before {
-  background: #ee3c36;
-  content: "";
-  display: block;
-  height: 100%;
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: -2;
-}
-
-.spin-btn:after {
-  background-color: initial;
-  background-image: linear-gradient(#c7322c 0, #471311 100%);
-  bottom: 4px;
-  content: "";
-  display: block;
-  left: 4px;
-  overflow: hidden;
-  position: absolute;
-  right: 4px;
-  top: 4px;
-  transition: all 100ms ease-out;
-  z-index: -1;
-}
-
-.spin-btn:hover:not(:disabled):before {
-  background: linear-gradient(92.83deg, #f54d47 0%, rgb(177, 49, 24) 100%);
-}
-
-.spin-btn:hover:not(:disabled):after {
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  transition-timing-function: ease-in;
-  opacity: 0;
-}
-
-.spin-btn:active:not(:disabled) {
-  color: #541a0f;
-}
-
-.spin-btn:active:not(:disabled):before {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
-}
-
-.spin-btn:active:not(:disabled):after {
-  background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
-  bottom: 4px;
-  left: 4px;
-  right: 4px;
-  top: 4px;
-}
-
-.spin-btn:disabled {
-  cursor: default;
-  opacity: .24;
+.spin-btn:hover {
+    background-color: #f54d47;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(238, 60, 54, 0.4);
 }
 
 .sim-btn {
-  appearance: none;
-  background-clip: padding-box;
-  background-color: initial;
-  background-image: none;
-  border-style: none;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  flex-direction: row;
-  flex-shrink: 0;
-  font-family: Eina01,sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  justify-content: center;
-  line-height: 24px;
-  margin: 0;
-  min-height: 64px;
-  outline: none;
-  overflow: visible;
-  padding: 19px 26px;
-  pointer-events: auto;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-transform: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
-  width: auto;
-  word-break: keep-all;
-  z-index: 0;
-  margin-top: 15px;
-  width: 350px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.2s;
 }
 
-@media (min-width: 768px) {
-  .sim-btn {
-    padding: 19px 32px;
-  }
-}
-
-.sim-btn:before,
-.sim-btn:after {
-  border-radius: 80px;
-}
-
-.sim-btn:before {
-  background: #ee3c36;
-  content: "";
-  display: block;
-  height: 100%;
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: -2;
-}
-
-.sim-btn:after {
-  background-color: initial;
-  background-image: linear-gradient(#c7322c 0, #471311 100%);
-  bottom: 4px;
-  content: "";
-  display: block;
-  left: 4px;
-  overflow: hidden;
-  position: absolute;
-  right: 4px;
-  top: 4px;
-  transition: all 100ms ease-out;
-  z-index: -1;
-}
-
-.sim-btn:hover:not(:disabled):before {
-  background: linear-gradient(92.83deg, #f54d47 0%, rgb(177, 49, 24) 100%);
-}
-
-.sim-btn:hover:not(:disabled):after {
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  transition-timing-function: ease-in;
-  opacity: 0;
-}
-
-.sim-btn:active:not(:disabled) {
-  color: #541a0f;
-}
-
-.sim-btn:active:not(:disabled):before {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
-}
-
-.sim-btn:active:not(:disabled):after {
-  background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
-  bottom: 4px;
-  left: 4px;
-  right: 4px;
-  top: 4px;
-}
-
-.sim-btn:disabled {
-  cursor: default;
-  opacity: .24;
+.sim-btn:hover {
+    background-color: #444;
 }
 
 /* --- ROLETA --- */
@@ -305,14 +122,14 @@ select, input {
     border: none;
 }
 
-/* Container Principal (Fixo 360x360) */
+/* Wrapper Principal (360x360) */
 .wheel-wrapper {
     position: relative;
-    width: 360px; /* Deve bater com o JS */
-    height: 360px; /* Deve bater com o JS */
+    width: 360px; 
+    height: 360px;
     margin-bottom: 20px;
     border-radius: 50%;
-    background-color: #b7001a; /* Fundo Vermelho Escuro da borda */
+    background-color: #b7001a; 
     box-shadow: 
         0 0 0 4px #8a001a,
         0 15px 30px rgba(0,0,0,0.6);
@@ -321,22 +138,18 @@ select, input {
     justify-content: center;
 }
 
-/* Container dos LEDs (sobrepõe exatamente o wrapper) */
+/* LEDs */
 .led-ring {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     border-radius: 50%;
-    pointer-events: none; /* Permite clicar na roleta abaixo */
+    pointer-events: none; 
     z-index: 5;
 }
 
-/* O LED Individual (estilo "bolinha brilhante") */
 .led {
     position: absolute;
-    width: 12px; /* Deve bater com o JS */
+    width: 12px;
     height: 12px;
     border-radius: 50%;
     background-color: #ffd700;
@@ -363,57 +176,60 @@ select, input {
     filter: drop-shadow(0 4px 2px rgba(0,0,0,0.5));
 }
 
+/* RODA (300px) */
 .wheel {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    border: 4px solid #ffd700;
+    
+    /* LINHA FINA AMARELA */
+    border: 2px solid rgba(255, 208, 0, 0.95); 
+    
     transition: transform 3s cubic-bezier(0.1, 0.7, 0.1, 1);
-    /* Aqui usamos DUAS camadas de background:
-       1. Radial-Gradient: Cria uma sombra do centro para as bordas (efeito 3D).
-       2. Conic-Gradient: Cria as fatias coloridas alternadas corretamente.
-    */
+    
+    /* CORES ORIGINAIS (Preto, Vermelho, Verde) */
     background: 
         radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.5) 100%),
         conic-gradient(
-            #62a00f 0deg 9.7deg,      /* 0 - Verde */
-            #c7322c 9.7deg 19.4deg,   /* 32 - Vermelho */
-            #0e1411 19.4deg 29.1deg,  /* 15 - Preto */
-            #c7322c 29.1deg 38.8deg,  /* 19 - Vermelho */
-            #0e1411 38.8deg 48.5deg,  /* 4 - Preto */
-            #c7322c 48.5deg 58.2deg,  /* 21 - Vermelho */
-            #0e1411 58.2deg 67.9deg,  /* 2 - Preto */
-            #c7322c 67.9deg 77.6deg,  /* 25 - Vermelho */
-            #0e1411 77.6deg 87.3deg,  /* 17 - Preto */
-            #c7322c 87.3deg 97deg,    /* 34 - Vermelho */
-            #0e1411 97deg 106.7deg,   /* 6 - Preto */
-            #c7322c 106.7deg 116.4deg,/* 27 - Vermelho */
-            #0e1411 116.4deg 126.1deg,/* 13 - Preto */
-            #c7322c 126.1deg 135.8deg,/* 36 - Vermelho */
-            #0e1411 135.8deg 145.5deg,/* 11 - Preto */
-            #c7322c 145.5deg 155.2deg,/* 30 - Vermelho */
-            #0e1411 155.2deg 164.9deg,/* 8 - Preto */
-            #c7322c 164.9deg 174.6deg,/* 23 - Vermelho */
-            #0e1411 174.6deg 184.3deg,/* 10 - Preto */
-            #c7322c 184.3deg 194deg,  /* 5 - Vermelho */
-            #0e1411 194deg 203.7deg,  /* 24 - Preto */
-            #c7322c 203.7deg 213.4deg,/* 16 - Vermelho */
-            #0e1411 213.4deg 223.1deg,/* 33 - Preto */
-            #c7322c 223.1deg 232.8deg,/* 1 - Vermelho */
-            #0e1411 232.8deg 242.5deg,/* 20 - Preto */
-            #c7322c 242.5deg 252.2deg,/* 14 - Vermelho */
-            #0e1411 252.2deg 261.9deg,/* 31 - Preto */
-            #c7322c 261.9deg 271.6deg,/* 9 - Vermelho */
-            #0e1411 271.6deg 281.3deg,/* 22 - Preto */
-            #c7322c 281.3deg 291deg,  /* 18 - Vermelho */
-            #0e1411 291deg 300.7deg,  /* 29 - Preto */
-            #c7322c 300.7deg 310.4deg,/* 7 - Vermelho */
-            #0e1411 310.4deg 320.1deg,/* 28 - Preto */
-            #c7322c 320.1deg 329.8deg,/* 12 - Vermelho */
-            #0e1411 329.8deg 339.5deg,/* 35 - Preto */
-            #c7322c 339.5deg 349.2deg,/* 3 - Vermelho */
-            #0e1411 349.2deg 360deg   /* 26 - Preto */
+            #62a00f 0deg 9.7deg,      
+            #c7322c 9.7deg 19.4deg,   
+            #0e1411 19.4deg 29.1deg,  
+            #c7322c 29.1deg 38.8deg,
+            #0e1411 38.8deg 48.5deg,
+            #c7322c 48.5deg 58.2deg,
+            #0e1411 58.2deg 67.9deg,
+            #c7322c 67.9deg 77.6deg,
+            #0e1411 77.6deg 87.3deg,
+            #c7322c 87.3deg 97deg,
+            #0e1411 97deg 106.7deg,
+            #c7322c 106.7deg 116.4deg,
+            #0e1411 116.4deg 126.1deg,
+            #c7322c 126.1deg 135.8deg,
+            #0e1411 135.8deg 145.5deg,
+            #c7322c 145.5deg 155.2deg,
+            #0e1411 155.2deg 164.9deg,
+            #c7322c 164.9deg 174.6deg,
+            #0e1411 174.6deg 184.3deg,
+            #c7322c 184.3deg 194deg,
+            #0e1411 194deg 203.7deg,
+            #c7322c 203.7deg 213.4deg,
+            #0e1411 213.4deg 223.1deg,
+            #c7322c 223.1deg 232.8deg,
+            #0e1411 232.8deg 242.5deg,
+            #c7322c 242.5deg 252.2deg,
+            #0e1411 252.2deg 261.9deg,
+            #c7322c 261.9deg 271.6deg,
+            #0e1411 271.6deg 281.3deg,
+            #c7322c 281.3deg 291deg,
+            #0e1411 291deg 300.7deg,
+            #c7322c 300.7deg 310.4deg,
+            #0e1411 310.4deg 320.1deg,
+            #c7322c 320.1deg 329.8deg,
+            #0e1411 329.8deg 339.5deg,
+            #c7322c 339.5deg 349.2deg,
+            #0e1411 349.2deg 360deg
         );
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -421,7 +237,6 @@ select, input {
     font-size: 24px;
     font-weight: bold;
     text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-    position: relative;
 }
 
 /* Centro da roleta */
@@ -463,15 +278,25 @@ select, input {
 .chart-panel h3 {
     color: #d90429;
     border-bottom: 2px solid #ffd700;
+    padding-bottom: 5px;
 }
 
+/* CONTAINER DO GRÁFICO (COM FUNDO ESCURO PREMIUM) */
 .simple-graph-container {
     width: 100%;
-    height: 200px;
-    border: 1px solid #d90429;
-    border-radius: 8px;
-    padding: 10px;
-    background-color: #fff;
+    height: 240px; /* Um pouco mais alto */
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    /* AQUI ESTÁ A MUDANÇA: Fundo escuro azulado chique */
+    background: linear-gradient(145deg, #1e272e, #485460); 
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+.graph-footer {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
 }
 
 .footer {
