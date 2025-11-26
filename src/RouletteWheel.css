@@ -6,14 +6,6 @@ body {
     margin: 0;
 }
 
-.header-text {
-    text-align: center;
-    color: #fff;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-bottom: 4px solid #d90429;
-}
-
 .header-text h1 {
     margin: 0;
     font-size: 2rem;
@@ -34,13 +26,12 @@ body {
 
 /* --- PAINÉIS --- */
 .panel {
-    background: #ffffff;
+    background: #ffffff6e;
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
-    border: 2px solid #c7322c;
 }
 
 /* --- PAINEL DE APOSTAS --- */
@@ -51,8 +42,7 @@ body {
 }
 
 .betting-panel h2 {
-    color: #c7322c;
-    border-bottom: 2px solid #62a00f;
+    color: #000000;
     padding-bottom: 10px;
     margin-top: 0;
 }
@@ -267,16 +257,14 @@ input {
 {
     flex: 1;
     min-width: 280px;
-    color: #d90429;
-    border-bottom: 2px solid #ffd700;
+    color: #000000;
     padding-bottom: 5px;
-    background: #ffffff;
+    background: #ffffff6e;
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
-    border: 2px solid #c7322c;
     align-items: center;
 }
 
