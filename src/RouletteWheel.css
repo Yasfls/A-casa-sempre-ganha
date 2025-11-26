@@ -1,6 +1,6 @@
 /* --- ESTRUTURA GERAL --- */
 body {
-    background-color: #163f26; 
+    background-color: #163f26;
     font-family: 'Montserrat', 'Roboto', sans-serif;
     color: #333;
     margin: 0;
@@ -10,7 +10,7 @@ body {
     text-align: center;
     color: #fff;
     padding: 15px;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     border-bottom: 4px solid #d90429;
 }
 
@@ -37,7 +37,7 @@ body {
     background: #ffffff;
     border-radius: 12px;
     padding: 25px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
     border: 2px solid #c7322c;
@@ -51,8 +51,8 @@ body {
 }
 
 .betting-panel h2 {
-    color: #c7322c; 
-    border-bottom: 2px solid #62a00f; 
+    color: #c7322c;
+    border-bottom: 2px solid #62a00f;
     padding-bottom: 10px;
     margin-top: 0;
 }
@@ -63,7 +63,8 @@ body {
     margin-bottom: 15px;
 }
 
-select, input {
+select,
+input {
     padding: 12px;
     border: 2px solid #e0e0e0;
     border-radius: 6px;
@@ -125,14 +126,14 @@ select, input {
 /* Wrapper Principal (360x360) */
 .wheel-wrapper {
     position: relative;
-    width: 360px; 
+    width: 360px;
     height: 360px;
     margin-bottom: 20px;
     border-radius: 50%;
-    background-color: #b7001a; 
-    box-shadow: 
+    background-color: #b7001a;
+    box-shadow:
         0 0 0 4px #8a001a,
-        0 15px 30px rgba(0,0,0,0.6);
+        0 15px 30px rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,9 +142,12 @@ select, input {
 /* LEDs */
 .led-ring {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    pointer-events: none; 
+    pointer-events: none;
     z-index: 5;
 }
 
@@ -158,8 +162,16 @@ select, input {
 }
 
 @keyframes blink {
-    from { opacity: 0.5; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1.2); box-shadow: 0 0 15px #ffd700; }
+    from {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+        box-shadow: 0 0 15px #ffd700;
+    }
 }
 
 .indicator {
@@ -167,13 +179,13 @@ select, input {
     top: -25px;
     left: 50%;
     transform: translateX(-50%);
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-top: 40px solid #c7322c; 
+    border-top: 40px solid #c7322c;
     z-index: 20;
-    filter: drop-shadow(0 4px 2px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.5));
 }
 
 /* RODA (300px) */
@@ -181,79 +193,61 @@ select, input {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    
-    /* LINHA FINA AMARELA */
-    border: 2px solid rgba(255, 208, 0, 0.95); 
-    
-    transition: transform 3s cubic-bezier(0.1, 0.7, 0.1, 1);
-    
-    /* CORES ORIGINAIS (Preto, Vermelho, Verde) */
-    background: 
-        radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.5) 100%),
-        conic-gradient(
-            #62a00f 0deg 9.7deg,      
-            #c7322c 9.7deg 19.4deg,   
-            #0e1411 19.4deg 29.1deg,  
-            #c7322c 29.1deg 38.8deg,
-            #0e1411 38.8deg 48.5deg,
-            #c7322c 48.5deg 58.2deg,
-            #0e1411 58.2deg 67.9deg,
-            #c7322c 67.9deg 77.6deg,
-            #0e1411 77.6deg 87.3deg,
-            #c7322c 87.3deg 97deg,
-            #0e1411 97deg 106.7deg,
-            #c7322c 106.7deg 116.4deg,
-            #0e1411 116.4deg 126.1deg,
-            #c7322c 126.1deg 135.8deg,
-            #0e1411 135.8deg 145.5deg,
-            #c7322c 145.5deg 155.2deg,
-            #0e1411 155.2deg 164.9deg,
-            #c7322c 164.9deg 174.6deg,
-            #0e1411 174.6deg 184.3deg,
-            #c7322c 184.3deg 194deg,
-            #0e1411 194deg 203.7deg,
-            #c7322c 203.7deg 213.4deg,
-            #0e1411 213.4deg 223.1deg,
-            #c7322c 223.1deg 232.8deg,
-            #0e1411 232.8deg 242.5deg,
-            #c7322c 242.5deg 252.2deg,
-            #0e1411 252.2deg 261.9deg,
-            #c7322c 261.9deg 271.6deg,
-            #0e1411 271.6deg 281.3deg,
-            #c7322c 281.3deg 291deg,
-            #0e1411 291deg 300.7deg,
-            #c7322c 300.7deg 310.4deg,
-            #0e1411 310.4deg 320.1deg,
-            #c7322c 320.1deg 329.8deg,
-            #0e1411 329.8deg 339.5deg,
-            #c7322c 339.5deg 349.2deg,
-            #0e1411 349.2deg 360deg
-        );
-    
+    /* AJUSTE VISUAL: Borda mais fina (de 4px para 2px) */
+    border: 2px solid #f6b93b;
+    position: relative;
+}
+
+/* --- CORREÇÃO DOS NÚMEROS (MÉTODO ORBITAL) --- */
+.wheel-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    /* Ponto zero no centro */
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.wheel-number span {
+    display: block;
     color: white;
-    font-size: 24px;
+    font-size: 14px;
     font-weight: bold;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    font-family: 'Arial', sans-serif;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 15;
 }
 
 /* Centro da roleta */
 .wheel::after {
     content: '';
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 60px;
     height: 60px;
     background-color: #d90429;
     border: 4px solid #b00020;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    z-index: 2;
-}
-
-.wheel.spinning {
-    transform: rotate(1800deg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 12;
 }
 
 /* Placar */
@@ -269,6 +263,23 @@ select, input {
     box-shadow: 0 5px 0 #d90429;
 }
 
+.panel_historico
+{
+    flex: 1;
+    min-width: 280px;
+    color: #d90429;
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 5px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #c7322c;
+    align-items: center;
+}
+
 /* --- GRÁFICO --- */
 .chart-panel {
     flex: 1;
@@ -281,19 +292,20 @@ select, input {
     padding-bottom: 5px;
 }
 
-/* CONTAINER DO GRÁFICO (COM FUNDO ESCURO PREMIUM) */
+/* CONTAINER DO GRÁFICO */
 .simple-graph-container {
     width: 100%;
-    height: 240px; /* Um pouco mais alto */
+    height: 300px;
     border: none;
     border-radius: 12px;
     padding: 15px;
-    /* AQUI ESTÁ A MUDANÇA: Fundo escuro azulado chique */
-    background: linear-gradient(145deg, #1e272e, #485460); 
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+    align-content: center;
+    align-items: center;
+
 }
 
 .graph-footer {
+
     text-align: center;
     margin-top: 10px;
     font-size: 0.9rem;
@@ -302,8 +314,8 @@ select, input {
 .footer {
     text-align: center;
     padding: 20px;
-    color: rgba(255,255,255,0.6);
-    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
     margin-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
