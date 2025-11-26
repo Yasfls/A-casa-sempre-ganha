@@ -183,7 +183,7 @@ const RouletteWheel = () => {
       <div className="panel betting-panel">
         <h2>Faça sua Aposta</h2>
         <div className="control-group">
-            <label>Tipo de Aposta:</label>
+            <label class="titulo_campo">Tipo de Aposta:</label>
             <select value={betOption} onChange={(e) => setBetOption(e.target.value)} disabled={isSpinning}>
                 <option value="color">Cor (Vermelho/Preto)</option>
                 <option value="evenOdd">Par/Ímpar</option>
@@ -191,7 +191,7 @@ const RouletteWheel = () => {
             </select>
         </div>
         <div className="control-group">
-            <label>Sua escolha:</label>
+            <label class="titulo_campo">Sua escolha:</label>
             {betOption === 'color' && (
                 <select value={betDetails} onChange={(e) => setBetDetails(e.target.value)}>
                     <option value="red">Vermelho</option><option value="black">Preto</option>
@@ -207,7 +207,7 @@ const RouletteWheel = () => {
             )}
         </div>
         <div className="control-group">
-            <label>Valor da Aposta ($):</label>
+            <label class="titulo_campo">Valor da Aposta ($):</label>
             <input type="number" value={betAmount} onChange={(e) => setBetAmount(parseInt(e.target.value) || 0)} />
         </div>
         <button className="spin-btn" onClick={handleSpin} disabled={isSpinning || balance <= 0}>

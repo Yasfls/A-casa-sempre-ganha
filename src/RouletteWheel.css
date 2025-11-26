@@ -14,6 +14,13 @@ body {
     color: #f4f2f1;
 }
 
+.titulo_campo
+{
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 4px;
+}
+
 .roulette-container {
     display: flex;
     flex-direction: row;
@@ -57,7 +64,7 @@ select,
 input {
     padding: 12px;
     border: 2px solid #e0e0e0;
-    border-radius: 6px;
+    border-radius: 80px;
     font-size: 16px;
     background-color: #f9f9f9;
     transition: all 0.3s;
@@ -90,7 +97,7 @@ input {
     color: #fff;
     border: none;
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 80px;
     width: 100%;
     font-weight: bold;
     cursor: pointer;
