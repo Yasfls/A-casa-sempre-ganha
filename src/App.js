@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css'; // Mantenha este import para estilos gerais (pode estar vazio ou não)
+import './App.css'; 
 import RouletteWheel from './RouletteWheel';
 
 function App() {

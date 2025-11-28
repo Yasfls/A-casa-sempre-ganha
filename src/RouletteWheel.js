@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './RouletteWheel.css';
 
-// --- GRÁFICO NATIVO ---
 const SimpleGraph = ({ data }) => {
   if (!data || data.length < 2) return null;
 
@@ -56,7 +55,6 @@ const SimpleGraph = ({ data }) => {
   );
 };
 
-// --- ROLETA ---
 const RouletteWheel = () => {
   const ringRef = useRef(null);
   const [selectedNumber, setSelectedNumber] = useState(null);
@@ -95,10 +93,8 @@ const RouletteWheel = () => {
     if (!ring) return;
     ring.innerHTML = "";
     
-    // AJUSTE VISUAL DOS LEDS
     const totalLeds = 24; 
     const center = 180; 
-    // Alterado de 165 para 166 para compensar a borda de 2px e ficar perfeitamente no centro da faixa vermelha
     const radius = 166; 
     const ledSize = 12;
 
